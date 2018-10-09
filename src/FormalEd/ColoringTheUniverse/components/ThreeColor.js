@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
-// CSS
+// Main CSS
+import '../../../index.css';
+
+// Widget CSS
 import '../css/App.css';
-import '../css/Widget.css';
  
 
 // Semantic UI
 
 class ThreeColor extends Component {
-
+ constructor(props) {
+    super(props);
+    this.state = { class: '' };
+  }
   render() {
   	    return (
 
@@ -60,7 +65,7 @@ class ThreeColor extends Component {
                 <div className="intro_filter"></div>
                 <div className="blue_filter"></div>
                 <div className="green_filter"></div>
-                <div className="red_filter"></div>
+                <div className="red_filter" style={{'display': 'block'}}></div>
               </div>
               
             </div>

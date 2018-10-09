@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-// CSS
-import '../css/App.css';
+// Main CSS
+import '../../../index.css';
 
 // Images
 import Rocket from '../assets/images/rocket.svg'

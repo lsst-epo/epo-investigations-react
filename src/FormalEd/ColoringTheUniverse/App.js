@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './css/App.css';
+
+// Main CSS
+import '../../index.css';
+
 
 // Components
 import Header from './components/Header'
@@ -10,7 +13,7 @@ import SixColor from './components/SixColor'
 // Images
 
 import VisibleSpectrum from './assets/images/visible_spectrum2.png'
-import Marenfeld from './assets/images/marenfeld.jpg'
+import Marenfeld from './assets/images/marenfeld.jpeg'
 import BayerFilter from './assets/images/bayer_filter.png'
 import RGB from './assets/images/rgb.png'
 import RGBColor from './assets/images/color_rgb_strip.jpg'
