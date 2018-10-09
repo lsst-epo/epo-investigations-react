@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import * as THREE from 'three';
-import OrbitControls from 'three-orbit-controls'
+import { OrbitControls } from 'three-orbitcontrols-ts';
 
 class ThreeScene extends Component{
   componentDidMount(){
-
 
     const width = this.mount.clientWidth
     const height = this.mount.clientHeight
@@ -15,24 +14,36 @@ class ThreeScene extends Component{
 
     //ADD CAMERA
     this.camera = new THREE.PerspectiveCamera(
-      75,
+      45,
       width / height,
-      0.1,
+      1,
       1000
     )
-    this.camera.position.z = 4
+    this.camera.position.set( 5.5, 0, 0 );
+    this.controls = new OrbitControls(this.camera);
+
+
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true })
     this.renderer.setClearColor('#000000')
     this.renderer.setSize(width, height)
     this.mount.appendChild(this.renderer.domElement)
-    //ADD CUBE
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: '#433F81'     })
-    this.cube = new THREE.Mesh(geometry, material)
-    this.scene.add(this.cube)
-this.start()
+   
+    // Sphere
+    var geometry = new THREE.SphereGeometry( 5, 32, 32 );
+    var material = new THREE.MeshBasicMaterial({
+      color: 0xF3A2B0,
+      wireframe: true
+    });
+    
+
+    this.sphere = new THREE.Mesh( geometry, material );
+    
+    this.sphere.castShadow = true;
+    this.scene.add(this.sphere)
+    this.start()
   }
+
 componentWillUnmount(){
     this.stop()
     this.mount.removeChild(this.renderer.domElement)
@@ -46,8 +57,6 @@ stop = () => {
     cancelAnimationFrame(this.frameId)
   }
 animate = () => {
-   this.cube.rotation.x += 0.01
-   this.cube.rotation.y += 0.01
    this.renderScene()
    this.frameId = window.requestAnimationFrame(this.animate)
  }
