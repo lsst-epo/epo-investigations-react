@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-
-// Widget CSS
-import './css/App.css';
  
 import ThreeScene from "./components/threeEntryPoint"
 

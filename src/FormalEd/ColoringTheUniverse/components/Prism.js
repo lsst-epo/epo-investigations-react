@@ -42,7 +42,6 @@ class Prism extends Component {
                   <div className={'prism-colors', this.state.value == 'yellow' ? 'long prism-colors' : 'prism-colors '}></div>
                   <div className={'prism-colors', this.state.value == 'green' ? 'long prism-colors' : 'prism-colors '}></div>
                   <div className={'prism-colors', this.state.value == 'blue' ? 'long prism-colors' : 'prism-colors '}></div>
-                  <div className={'prism-colors', this.state.value == 'indigo' ? 'long prism-colors' : 'prism-colors '}></div>
                   <div className={'prism-colors', this.state.value == 'violet' ? 'long prism-colors' : 'prism-colors '}></div>
                   <div className={this.state.class} style={{background: this.state.value}}></div>
                 </div>
@@ -94,15 +93,6 @@ class Prism extends Component {
             name='radioGroup'
             value='blue'
             checked={this.state.value === 'blue'}
-            onChange={this.handleChange}
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio className={'prism-radio'}
-            label='Indigo'
-            name='radioGroup'
-            value='indigo'
-            checked={this.state.value === 'indigo'}
             onChange={this.handleChange}
           />
         </Form.Field>
