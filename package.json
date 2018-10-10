@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@types/three": "^0.92.25",
+    "gh-pages": "^2.0.1",
+    "husky": "^1.1.1",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-router-dom": "^4.3.1",
@@ -13,12 +17,22 @@
     "three-orbitcontrols-ts": "^0.1.2",
     "yarn-check": "^0.0.3"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
   "scripts": {
+    "precommit": "lint-staged",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://lsst-epo.github.io/epo-investigations-react",
   "browserslist": [
     ">0.2%",
     "not dead",
