@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-// CSS
+
+// Main CSS
+import '../../../index.css';
+
+// Widget CSS
 import '../css/App.css';
  
 

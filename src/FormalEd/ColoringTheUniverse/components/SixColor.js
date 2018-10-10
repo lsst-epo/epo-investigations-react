@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 
-// CSS
+// Main CSS
+import '../../../index.css';
+
+// Widget CSS
 import '../css/App.css';
-import '../css/Widget.css';
  
+
 
 
 // Semantic UI
 import { Checkbox } from 'semantic-ui-react'
 
+function test() {
+  console.log(this.div)
+}
 
 class SixColor extends Component {
+    state = { checked: 'false'}
+    handleChange = (e, { value }) => this.setState({ checked: 'true' })
 
   render() {
 
@@ -26,7 +34,7 @@ class SixColor extends Component {
 
                  <br></br>
                 <div className="filter"  id="u_filter">
-                  <Checkbox className="form-check-input" type="checkbox" onchange="check(this.parentNode.id)"/> <p className="filter_label"></p>
+                  <Checkbox className="form-check-input" type="checkbox" onChange={this.handleChange}/> <p className="filter_label"></p>
                   <input type="range" min="1.5" max="4" step=".01" value="1.92" className="range" onchange="update_slider(this.value, this.parentNode.id)" />
                   <select className="custom-select" aria-label="Color" onchange="color_picker(this.value, this.parentNode.id)">
                     <option value="" disabled selected>Color</option>
@@ -117,7 +125,7 @@ class SixColor extends Component {
               <div className="col-8">
                
                   <div className="intro_filter"></div>
-                  <div className="image_filter u_filter"></div>
+                  { this.state.checked ? <div className="image_filter u_filter"></div> : null }
                   <div className="image_filter g_filter"></div>
                   <div className="image_filter r_filter"></div>
                   <div className="image_filter i_filter"></div>
