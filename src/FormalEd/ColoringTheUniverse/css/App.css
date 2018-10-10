@@ -1,104 +1,248 @@
+/* Prism Widget */
 
+.single {
+  width: 450px !important;
+  background: red;
+  /*-webkit-animation: glow 1.7s ease-in-out infinite alternate;*/
+  /*animation: glow 1.7s ease-in-out infinite alternate;*/
+}
+
+.prism-shape {
+  width: 150px;
+  height: 150px;
+  border-bottom: 3px solid grey;
+  position: relative;
+  margin: 2rem auto 5rem;
+}
+.prism-shape:before,
+.prism-shape:after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  bottom: 0;
+  background: grey;
+  z-index: 3;
+}
+.prism-shape:before {
+  -webkit-transform: rotate(60deg) translateX(-47%);
+  transform: rotate(60deg) translateX(-47%);
+  right: -72px;
+}
+.prism-shape:after {
+  -webkit-transform: rotate(-60deg) translateX(47%);
+  transform: rotate(-60deg) translateX(47%);
+  left: -72px;
+}
+.prism-shape .white-streak {
+  height: 3px;
+  width: 300px;
+  position: absolute;
+  left: -278px;
+  background: grey;
+  -webkit-transform: rotate(-13deg) translateY(calc(100% + 110px));
+  transform: rotate(-13deg) translateY(calc(100% + 110px));
+  border-radius: 10px 0 0 10px;
+}
+.prism-shape .prism-wrapper {
+  position: relative;
+  height: 100px;
+  width: 400px;
+  -webkit-perspective: 150px;
+  perspective: 150px;
+  margin: 80px auto auto -120px;
+  -webkit-transform: rotate(36deg);
+  transform: rotate(36deg);
+}
+.prism-shape .prism-clip-wrapper {
+  width: 700px;
+  height: 520px;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  -webkit-transform: rotate(-31deg);
+  transform: rotate(-31deg);
+  left: 153px;
+  top: -202px;
+  z-index: -1;
+}
+
+.long {
+  width: 400px !important;
+}
+
+@-webkit-keyframes glow {
+  to {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+
+@keyframes glow {
+  to {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+.prism-items {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
+  display: flex;
+  flex-direction: column;
+}
+.prism-items .prism-colors {
+  width: 310px;
+  flex-grow: 1;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+.prism-items .prism-colors:nth-child(1) {
+  background: red;
+}
+.prism-items .prism-colors:nth-child(2) {
+  background: orange;
+}
+.prism-items .prism-colors:nth-child(3) {
+  background: yellow;
+}
+.prism-items .prism-colors:nth-child(4) {
+  background: green;
+}
+.prism-items .prism-colors:nth-child(5) {
+  background: blue;
+}
+.prism-items .prism-colors:nth-child(6) {
+  background: violet;
+}
+
+.lens {
+  background-color: #dedede;
+  border-radius: 10px;
+  height: 170px;
+  width: 10px;
+  position: absolute;
+  top: -57px;
+  right: 91px;
+}
+
+.camera-filter {
+  width: 7px;
+  right: 84px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.1s linear;
+  z-index: 1;
+}
+
+.camera-filter-active {
+  top: -34px;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+/* End Prism Widget*/
 
 /* Astronaut and Cover */
 
-
-.central-body{
-/*    width: 100%;*/
-    padding: 17% 5% 10% 5%;
-    text-align: center;
+.central-body {
+  /*    width: 100%;*/
+  padding: 17% 5% 10% 5%;
+  text-align: center;
 }
 
-.objects img{
-    z-index: 90;
-    pointer-events: none;
+.objects img {
+  z-index: 90;
+  pointer-events: none;
 }
 
-.object_rocket{
-    z-index: 95;
-    position: absolute;
-    transform: translateX(-50px);
-    top: 45%;
-    pointer-events: none;
-    animation: rocket-movement 200s linear infinite both running;
+.object_rocket {
+  z-index: 95;
+  position: absolute;
+  transform: translateX(-50px);
+  top: 45%;
+  pointer-events: none;
+  animation: rocket-movement 200s linear infinite both running;
 }
 
-.object_earth{
-    position: absolute;
-    top: 20%;
-    left: 15%;
-    z-index: 90;
-/*    animation: spin-earth 100s infinite linear both;*/
+.object_earth {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  z-index: 90;
+  /*    animation: spin-earth 100s infinite linear both;*/
 }
 
-.object_moon{
-    position: absolute;
-    top: 12%;
-    left: 25%;
-/*
+.object_moon {
+  position: absolute;
+  top: 12%;
+  left: 25%;
+  /*
     transform: rotate(0deg);
     transition: transform ease-in 99999999999s;
 */
 }
 
-.object_astronaut{
-    animation: rotate-astronaut 200s infinite linear both alternate;
+.object_astronaut {
+  animation: rotate-astronaut 200s infinite linear both alternate;
 }
 
-.box_astronaut{
-    z-index: 110 !important;
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    will-change: transform;
-    animation: move-astronaut 50s infinite linear both alternate;
+.box_astronaut {
+  z-index: 110 !important;
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  will-change: transform;
+  animation: move-astronaut 50s infinite linear both alternate;
 }
 
-
-.stars{
-    background: url(../assets/images/overlay_stars.svg);
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: left top;
+.stars {
+  background: url(../assets/images/overlay_stars.svg);
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: left top;
 }
 
-.glowing_stars .star{
-    position: absolute;
-    border-radius: 100%;
-    background-color: #fff;
-    width: 3px;
-    height: 3px;
-    opacity: 0.3;
-    will-change: opacity;
+.glowing_stars .star {
+  position: absolute;
+  border-radius: 100%;
+  background-color: #fff;
+  width: 3px;
+  height: 3px;
+  opacity: 0.3;
+  will-change: opacity;
 }
 
-.glowing_stars .star:nth-child(1){
-    top: 80%;
-    left: 25%;
-    animation: glow-star 2s infinite ease-in-out alternate 1s;
+.glowing_stars .star:nth-child(1) {
+  top: 80%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 1s;
 }
-.glowing_stars .star:nth-child(2){
-    top: 20%;
-    left: 40%;
-    animation: glow-star 2s infinite ease-in-out alternate 3s;
+.glowing_stars .star:nth-child(2) {
+  top: 20%;
+  left: 40%;
+  animation: glow-star 2s infinite ease-in-out alternate 3s;
 }
-.glowing_stars .star:nth-child(3){
-    top: 25%;
-    left: 25%;
-    animation: glow-star 2s infinite ease-in-out alternate 5s;
+.glowing_stars .star:nth-child(3) {
+  top: 25%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 5s;
 }
-.glowing_stars .star:nth-child(4){
-    top: 75%;
-    left: 80%;
-    animation: glow-star 2s infinite ease-in-out alternate 7s;
+.glowing_stars .star:nth-child(4) {
+  top: 75%;
+  left: 80%;
+  animation: glow-star 2s infinite ease-in-out alternate 7s;
 }
-.glowing_stars .star:nth-child(5){
-    top: 90%;
-    left: 50%;
-    animation: glow-star 2s infinite ease-in-out alternate 9s;
+.glowing_stars .star:nth-child(5) {
+  top: 90%;
+  left: 50%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
 }
 
-input[type="range"] {
+input[type='range'] {
   /*display: block;*/
   -webkit-appearance: none;
   background-color: #4b6cb7;
@@ -108,8 +252,8 @@ input[type="range"] {
   outline: 0;
   margin-bottom: 20px;
   margin-top: 20px;
-}       
-input[type=range]::-webkit-slider-thumb {
+}
+input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
   height: 26px;
@@ -136,7 +280,7 @@ input[type=range]::-webkit-slider-thumb {
   color: #3498db;
 }
 .form-check-input {
-  margin-top: .85rem;
+  margin-top: 0.85rem;
 }
 
 .button {
@@ -151,18 +295,18 @@ input[type=range]::-webkit-slider-thumb {
 }
 .button:hover {
   background: #759bc3;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .sticky {
   position: absolute;
-  bottom: 0;  
+  bottom: 0;
 }
 
 .input-container {
   width: 70%;
   float: right;
-  right:0;
+  right: 0;
 }
 
 .widget {
@@ -177,51 +321,47 @@ input[type=range]::-webkit-slider-thumb {
   text-shadow: none;
 }
 
-
 .filter {
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
 }
 
 .filter_label {
   display: inline-block;
 }
 
-
 /* Filters */
 
 /* Intro */
 .intro_filter {
-    background-position: center; 
-    border-radius: 10px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-blend-mode: multiply;
-    mix-blend-mode: screen;
-    -webkit-box-shadow: 0px 0px  11px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    0px 0px  11px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         0px 0px  11px #ccc;
-    /*display: none;*/
+  background-position: center;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-blend-mode: multiply;
+  mix-blend-mode: screen;
+  -webkit-box-shadow: 0px 0px 11px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 0px 0px 11px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 0px 0px 11px #ccc;
+  /*display: none;*/
 }
-
 
 /* Six Color Filter */
 .image_filter {
-    background-position: center; 
-    border-radius: 10px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-blend-mode: multiply;
-    mix-blend-mode: screen;
-    -webkit-box-shadow: 3px 3px  6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    3px 3px  6px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         3px 3px  6px #ccc;
-    display: none;
+  background-position: center;
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-blend-mode: multiply;
+  mix-blend-mode: screen;
+  -webkit-box-shadow: 3px 3px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 6px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 6px #ccc;
+  display: none;
 }
-
 
 .u_filter {
   filter: brightness(1.92);
@@ -231,8 +371,7 @@ input[type=range]::-webkit-slider-thumb {
 
 /* G – Blue */
 .g_filter {
-    filter: brightness(1.08);
-
+  filter: brightness(1.08);
 }
 
 /* R – Green */
@@ -242,18 +381,18 @@ input[type=range]::-webkit-slider-thumb {
 
 /* I – Yellow */
 .i_filter {
-  filter: brightness(.52);
+  filter: brightness(0.52);
 }
 
 /* Z – Orange */
 .z_filter {
-  filter: brightness(.375);
+  filter: brightness(0.375);
 }
 
 /* Y – Red */
 .y_filter {
   filter: brightness(1.9);
-} 
+}
 
 /* RGB Widget */
 
@@ -269,7 +408,7 @@ input[type=range]::-webkit-slider-thumb {
   mix-blend-mode: screen;
   background-size: 100%;
   display: none;
-} 
+}
 
 /* Green */
 .green_filter {
@@ -283,7 +422,7 @@ input[type=range]::-webkit-slider-thumb {
   mix-blend-mode: screen;
   background-size: 100%;
   display: none;
-} 
+}
 
 /* Blue */
 .blue_filter {
@@ -297,4 +436,4 @@ input[type=range]::-webkit-slider-thumb {
   mix-blend-mode: screen;
   background-size: 100%;
   display: none;
-} 
+}
