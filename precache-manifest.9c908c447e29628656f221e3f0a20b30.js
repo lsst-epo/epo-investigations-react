@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/epo-investigations-react/static/media/red_filter.87de8389.png"
   },
   {
-    "revision": "21f47aa9c8ff8c0bcb53219007b3cbc0",
-    "url": "/epo-investigations-react/static/media/green_filter.21f47aa9.png"
-  },
-  {
     "revision": "cf747f68f11d0bb9dc612327cb730667",
     "url": "/epo-investigations-react/static/media/blue_filter.cf747f68.png"
+  },
+  {
+    "revision": "21f47aa9c8ff8c0bcb53219007b3cbc0",
+    "url": "/epo-investigations-react/static/media/green_filter.21f47aa9.png"
   },
   {
     "revision": "7461c5acbe983fb4c6306a64da2d976a",
