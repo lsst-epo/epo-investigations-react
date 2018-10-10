@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/epo-investigations-react/precache-manifest.45e0a1d80e4fd62da639b799f92f9ecb.js"
+  "/epo-investigations-react/precache-manifest.647debcf8044eb510780009d779f6e30.js"
 );
 
 workbox.clientsClaim();
