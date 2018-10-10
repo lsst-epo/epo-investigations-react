@@ -141,7 +141,7 @@ class SixColor extends Component {
                <button id="button" className="button" value="preset" name="preset" onchange="reset()" >Reset</button>
               <div className="input-group sticky input-container">
                   <select className="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" onchange="select(this.value)">
-                    <option selected>Select a Filter</option>
+                    <option selected>Select an Object</option>
                     <option value="m33">M33</option>
                     <option value="m63">M63</option>
                     <option value="2">M15</option>
