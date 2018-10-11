@@ -6,4 +6,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/coloring-the-universe" component={App} />
+      <Route path="/mapping-the-milky-way" component={MilkyWay} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
