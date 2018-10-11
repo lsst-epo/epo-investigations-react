@@ -1,5 +1,9 @@
 {
   "name": "epo-investigations-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsst-epo/epo-investigations-react"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
