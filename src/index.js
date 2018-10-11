@@ -9,13 +9,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 render(
   <BrowserRouter>
     <Switch>
-      <Route exact path={`${process.env.PUBLIC_URL}/`} component={App} />
+      <Route path={process.env.PUBLIC_URL + '/'} component={App} />
       <Route
-        path={`${process.env.PUBLIC_URL}/coloring-the-universe`}
+        path={process.env.PUBLIC_URL + '/coloring-the-universe'}
         component={App}
       />
       <Route
-        path={`${process.env.PUBLIC_URL}/mapping-the-milky-way`}
+        path={process.env.PUBLIC_URL + '/mapping-the-milky-way'}
         component={MilkyWay}
       />
     </Switch>
