@@ -7,11 +7,17 @@ import { render } from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={App} />
-      <Route path="/coloring-the-universe" component={App} />
-      <Route path="/mapping-the-milky-way" component={MilkyWay} />
+      <Route exact path={`${process.env.PUBLIC_URL}/`} component={App} />
+      <Route
+        path={`${process.env.PUBLIC_URL}/coloring-the-universe`}
+        component={App}
+      />
+      <Route
+        path={`${process.env.PUBLIC_URL}/mapping-the-milky-way`}
+        component={MilkyWay}
+      />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
